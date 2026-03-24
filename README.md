@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Web Project Portfolio
 
 This project is a personal portfolio website.
@@ -17,6 +16,3 @@ Clone the repository:
 
 ```bash
 git clone git@github.com:your-username/your-repo.git
-=======
-# Triple Espresso
->>>>>>> 1d5cc4f294cf17b73fb7bd6f183c02fb520bcc28
