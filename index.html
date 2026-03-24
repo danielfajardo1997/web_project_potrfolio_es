@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triple Espresso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" href="./images/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <img src="./images/logo_coffeeshop_dark.svg" class="logo" />
+
+      <nav class="nav">
+        <ul class="nav-links">
+          <li class="nav-link">
+            <a href="#reservation">Reservar una mesa</a>
+          </li>
+          <li class="nav-link">
+            <a href="#contacts">Contactos</a>
+          </li>
+        </ul>
+      </nav>
+
+      <h1 class="header-title">
+        <span class="span-accent">Café de especialidad</span><br />
+        en Triple Peaks
+      </h1>
+      <p class="header-description">
+        ¡Te damos la bienvenida a nuestra zona de estudio! Aquí tenemos café
+        para darte energía y motivar tu creatividad.
+      </p>
+
+      <div class="img">
+        <img src="./images/inside_coffee_shop.png" class="header-image" />
+      </div>
+
+      <div class="header-hours">
+        <p>Horario:</p>
+        <p>Lunes a Viernes (de 10:00h a 19:00h)</p>
+        <p>Sábados y Domingos (de 11:00h a 18:00h)</p>
+      </div>
+
+      <div class="header-address">
+        <p>Avenida del Éxito 200, Ciudad Triple Peaks</p>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="reservation">
+        <h2 class="reservation__title">Reservar una mesa</h2>
+
+        <form class="reservation__form">
+          <label class="reservation__label" for="name">Nombre *</label>
+          <input type="text" class="reservation__input" id="name" />
+
+          <label class="reservation__label" for="comensales"
+            >Número de comensales *</label
+          >
+          <input type="number" class="reservation__input" id="comensales" />
+
+          <label class="reservation__label" for="date">Fecha y Hora *</label>
+          <input type="date" class="reservation__input" id="date" />
+
+          <label class="reservation__label" for="mail"
+            >Tu correo electrónico *</label
+          >
+          <input type="email" class="reservation__input" id="mail" />
+
+          <button type="submit" class="reservation__button">
+            Reservar una mesa
+          </button>
+
+          <label class="reservation__checkbox-label">
+            <input type="checkbox" class="reservation__checkbox" />
+            Acepto los términos de uso
+          </label>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__div">
+        <div class="footer__div-logo">
+          <img src="./images/logo_coffeeshop_light.svg" class="logo-light" />
+        </div>
+
+        <div class="footer__div-redes">
+          <h3 class="footer__div-title">Redes sociales</h3>
+          <ul class="footer__div-list">
+            <li class="footer__link">
+              <a href="https://facebook.com"
+                ><img
+                  src="./images/facebook_white.svg"
+                  class="footer__icon"
+                />Facebook</a
+              >
+            </li>
+            <li class="footer__link">
+              <a href="https://Instagram.com"
+                ><img
+                  src="./images/instagram_white.svg"
+                  class="footer__icon"
+                />Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__div-info">
+        <p>© 2026 Daniel Fajardo</p>
+      </div>
+    </footer>
+  </body>
+</html>
