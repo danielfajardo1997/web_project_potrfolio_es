@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Node
+node_modules/
+
+# Build folders
+dist/
+build/
+
+# Env files
+.env
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
