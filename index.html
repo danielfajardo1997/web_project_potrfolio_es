@@ -1,102 +1,140 @@
-   <!-- ====================================================--> 
-   <!-- Daniel Giovanni Fajardo Lopez--> 
-   <!-- SPRINT 4 !--> 
-  <!-- ====================================================--> 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
-   <!-- ====================================================--> 
-   <!-- Generic Formating that needs to be added as standard--> 
-    <!-- ====================================================--> 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/normalize.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="icon" href="./images/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,400&display=swap"
-      rel="stylesheet"
-    />
-  <link rel="stylesheet" href="styles/style.css" />
-     <!-- ====================================================--> 
-   <!-- Generic Formating that needs to be added as standard--> 
-    <!-- ====================================================--> 
+
+  <link rel="stylesheet" href="./styles/normalize.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
 </head>
+
 <body>
 
+  <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="header__div-info">
       <h1 class="title">Daniel Fajardo</h1>
-      <h2 class="sub-title">Desarrollador Full-Stack Junior | TypeScript, React, Node.js</h2>
-      <p class ="abstract">Desarrollador web junior con experiencia práctica creando interfaces limpias y responsivas con HTML, CSS, JavaScript y React, así como implementando lógica básica de back-end. Ha trabajado en proyectos formativos que siguen procesos reales de desarrollo, usando Git, GitHub y Figma. Disfruta colaborar en equipo, mantener un código claro y resolver problemas de forma estructurada. Motivado por seguir aprendiendo, asumir nuevos retos y aprovechar oportunidades para crecer como desarrollador.</p>
+      <h2 class="sub-title">
+        Desarrollador Full-Stack Junior | TypeScript, React, Node.js
+      </h2>
+
+      <p class="abstract">
+        Desarrollador web junior con experiencia práctica creando interfaces limpias
+        y responsivas con HTML, CSS, JavaScript y React, así como implementando lógica
+        básica de back-end.
+      </p>
+
       <div class="menu">
-       <a href="/cv.pdf" download class="menu__button">Descargar CV</a>
-       <a href="https://github.com/danielfajardo1997" target="_blank" class="menu__link">GitHub Repository</a>
-       <a href="#contact" class="menu__nav-link">Hablemos</a>
-     </div>
+        <a href="/cv.pdf" download class="menu__button">Descargar CV</a>
+        <a href="https://github.com/danielfajardo1997" target="_blank" class="menu__link">GitHub</a>
+        <a href="#contact" class="menu__nav-link">Hablemos</a>
+      </div>
     </div>
+
     <div class="header__div-image">
-      <img src="images/babuino.jpg" alt="Foto de perfil">
+      <img src="images/babuino.jpg" alt="Foto de Daniel Fajardo" />
     </div>
   </header>
 
+  <!-- ================= MAIN ================= -->
   <main class="main">
-    <div class="main__tools">
-      <h1 class="main-title">Habilidades y herramientas</h1>
-      <img src="images/html.svg" alt="html">
-      <img src="images/css.svg" alt="css">
-      <img src="images/js.svg" alt="javascript">
-      <img src="images/git.svg" alt="git">
-      <img src="images/github.svg" alt="github">
-      <img src="images/chatgpt.svg" alt="chatgpt">
+
+    <!-- HABILIDADES -->
+    <section class="tools">
+      <h2 class="main-title">Habilidades y herramientas</h2>
+
+      <div class="tools__icons">
+        <img src="images/html.svg" alt="HTML">
+        <img src="images/css.svg" alt="CSS">
+        <img src="images/js.svg" alt="JavaScript">
+        <img src="images/git.svg" alt="Git">
+        <img src="images/github.svg" alt="GitHub">
+        <img src="images/chatgpt.svg" alt="ChatGPT">
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="projects">
+      <h2 class="project-title">Proyectos destacados</h2>
+
+      <div class="projects__grid">
+
+        <!-- CARD 1 -->
+        <article class="card">
+
+          <!-- CONTENEDOR IMAGEN + OVERLAY -->
+          <div class="card__image">
+            <img src="images/coffee-web.svg" alt="Proyecto cafetería">
+            <div class="card__overlay"></div>
+
+            <!-- ICONOS ENCIMA -->
+            <div class="card__links">
+              <a href="#" target="_blank">
+                <img src="images/demo-icon.svg" alt="Ver demo">
+              </a>
+              <a href="#" target="_blank">
+                <img src="images/github-icon.svg" alt="Ver código">
+              </a>
+            </div>
+          </div>
+
+          <!-- CONTENIDO -->
+          <div class="card__content">
+            <h3 class="card__title">Página web de una cafetería</h3>
+            <p class="card__description">
+              Landing page responsiva con HTML, CSS y Flexbox, siguiendo un diseño
+              de Figma. Proyecto publicado en GitHub Pages.
+            </p>
+          </div>
+
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card">
+
+          <div class="card__image">
+            <img src="images/js-web.svg" alt="Proyecto JavaScript">
+            <div class="card__overlay"></div>
+
+            <div class="card__links">
+              <a href="#" target="_blank">
+                <img src="images/demo-icon.svg" alt="Ver demo">
+              </a>
+              <a href="#" target="_blank">
+                <img src="images/github-icon.svg" alt="Ver código">
+              </a>
+            </div>
+          </div>
+
+          <div class="card__content">
+            <h3 class="card__title">Proyecto JavaScript</h3>
+            <p class="card__description">
+              Aplicación interactiva desarrollada con JavaScript puro.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" id="contact">
+
+    <h2 class="footer__title">Contacto</h2>
+    <p class="footer__sub-title">student@tripleten.com</p>
+
+    <div class="social-media">
+      <a href="#"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+      <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="images/x.svg" alt="X"></a>
     </div>
-    <div class="main__projects">
-      <article class="card">
-       <img src="images/coffee-web.svg" alt="Proyecto coffee">
-       <div class="card__content">
-          <h3 class="card__title">Página web de una cafetería</h3>
-          <p class="card__description">Desarrollo de una landing page responsiva para una cafetería siguiendo un brief de diseño. Incluye estructura semántica, maquetación con Flexbox, creación de secciones nuevas y un formulario de contacto funcional. Logro: Implementé desde cero el diseño completo de la página, organicé el proyecto con buenas prácticas y publiqué la versión final utilizando GitHub Pages.</p>
-        </div>
-        <img src="images/demo-icon.svg" alt="demo">
-        <img src="images/github-icon.svg" alt="github-icon">
-      </article>
-      <article class="card">
-       <img src="images/js-web.jpg" alt="Proyecto-js">
-       <div class="card__content">
-          <h3 class="card__title">Mi proyecto</h3>
-          <p class="card__description">
-            Descripción del proyecto
-          </p>
-        </div>
-        <img src="images/demo-icon.svg" alt="demo">
-        <img src="images/github-icon.svg" alt="github-icon">
-      </article>
-    </div>
-    </main>
-
-  <footer class="footer">
-
-     <h1 class="footer__title">Contacto</h1>
-
-     <h2 class="footer__sub-title">student@tripleten.com</h2>
-
-     <div class="social-media">
-      <img src="images/linkedin.svg" alt="demo">
-      <img src="images/facebook.svg" alt="github-icon">
-      <img src="images/instagram.svg" alt="demo">
-      <img src="images/x.svg" alt="github-icon">
-     </div>
 
   </footer>
-
-
 
 </body>
 </html>

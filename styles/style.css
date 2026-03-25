@@ -1,226 +1,252 @@
-body {
-  min-width: 1100px;
-  max-width: 1600px;
-  margin: 0 auto;
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  background-color: #ffffff;
-}
-
-header {
-  min-height: 720px;
-  max-height: 800px;
-  height: 100vh;
-  padding-left: 80px;
-  padding-top: 183px; /* ← ESTA es la línea que necesitas */
-  position: relative; /* importante para el logo */
-  background-image: url("../images/background_header.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.nav-links {
-  top: 30px;
-  position: absolute;
-  right: 36px;
-  display: flex;
-  gap: 20px; /* ← esto crea separación horizontal */
-  list-style: none; /* quita los puntos */
+/* RESET BÁSICO */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
+body {
+  font-family: sans-serif;
+  background-color: #0d0d0d;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* =========================
+   🌌 FONDO CON "MANCHAS"
+   ========================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    radial-gradient(circle at calc(50% - 300px) 30%, #6D6DFF55, transparent 40%),
+    radial-gradient(circle at calc(50% + 300px) 70%, #6D6DFF33, transparent 40%);
+}
+
+
+
+/* =========================
+   📦 CONTENEDOR CARDS
+   ========================= */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 60px;
+}
+
+/* =========================
+   🧱 CARD
+   ========================= */
+.card {
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* =========================
+   🖼 IMAGEN + OVERLAY
+   ========================= */
+.card__image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.card__image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔥 OVERLAY OSCURO */
+.card__overlay {
   position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 105px;
-  height: 39px;
-  margin-bottom: 183px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.8)
+  );
 }
 
-.span-accent {
-  display: block;
-  font-family: "Times New Roman";
-  font-style: italic;
-  font-weight: normal;
-  font-size: 58px;
-  line-height: 72px;
-  color: #ff976b;
-}
-
-.header-image {
+/* ICONOS SOBRE IMAGEN */
+.card__icons {
   position: absolute;
-  top: 124px; /* ajusta según diseño */
-  right: 5px;
-  width: 646px;
-  height: 568px;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.header-title {
-  max-width: 709px;
-  margin-bottom: 20px;
-  font-family: "Inter";
-
-  font-style: normal;
-
-  font-weight: 500;
-
-  font-size: 58px;
-
-  line-height: 72px;
-
-  letter-spacing: -1px;
-
-  top: 130px; /* ajusta según diseño */
-  left: 80px;
+.card__icons img {
+  width: 30px;
 }
 
-.header-description {
-  max-width: 683px;
+/* =========================
+   📝 CONTENIDO CARD
+   ========================= */
+.card__content {
+  padding: 20px;
+}
 
-  font-family: "Inter";
-
-  font-style: normal;
-
-  font-weight: normal;
-
+.card__content h3 {
   font-size: 20px;
-
-  line-height: 30px;
-  left: 80px;
+  margin-bottom: 10px;
 }
 
-.header-info {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #6f6f6f;
-  bottom: 40px;
-  left: 40px;
+.card__content p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 15px;
 }
 
-.header-address {
+/* =========================
+   🔗 LINKS
+   ========================= */
+.card__links {
+  display: flex;
+  gap: 15px;
+}
+
+.card__links a {
+  color: #6D6DFF;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* ✨ SUBRAYADO CON GRADIENTE */
+.card__links a::after {
+  content: "";
   position: absolute;
-  bottom: 40px;
-  right: 80px;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(90deg, #6D6DFF, transparent);
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
-.reservation {
-  min-height: 700px;
-  background: #ffffff url("../images/background_reservation.svg") center/cover
-    no-repeat;
+.card__links a:hover::after {
+  transform: scaleX(1);
 }
 
-.reservation__title {
-  margin-bottom: 80px;
+.card__links a:hover {
+  color: white;
+}
+
+/* =========================
+   📩 CONTACTO
+   ========================= */
+.contact {
   text-align: center;
+  padding: 80px 20px;
 }
 
-.reservation__form {
-  max-width: 385px;
-  width: 100%;
+.contact h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  color: #6D6DFF;
+  margin-bottom: 30px;
+}
+
+/* ICONOS REDES */
+.socials {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
 }
 
-.reservation__checkbox {
-  max-width: 385px;
-}
-
-.reservation__button {
-  height: 60px;
-  margin-bottom: 32px;
-  background-color: #e6652f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.reservation__label {
-  margin-bottom: 8px;
-}
-
-.reservation__input {
-  height: 60px;
-  padding-left: 20px;
-  margin-bottom: 32px;
-  border-radius: 4px;
-  border: 1px solid #838383;
-  width: 100%;
-}
-
-.reservation__form {
-  max-width: 385px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-.reservation__checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.footer {
-  background-color: #d35722;
-}
-
-.footer__div {
-  display: flex;
-  gap: 700px;
-}
-
-.footer__div-redes {
-  color: #ffff;
-  text-decoration: none;
-}
-
-.footer__icon {
-  width: 16px;
-  height: 16px;
-}
-
-.footer__link {
-  display: flex;
-  align-items: center;
-  gap: 100px;
-  color: white;
-  text-decoration: none;
-}
-
-.footer__div-info {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-link a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-link a:hover {
-  color: #ff976b;
-}
-
-.reservation__button {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.reservation__button:hover {
+.socials img {
+  width: 30px;
   opacity: 0.7;
+  transition: transform 0.3s, opacity 0.3s;
 }
+
+.socials img:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.tools__icons{
+
+  display: flex;
+  justify-content: space-between; /* distribuye en todo el ancho */
+  align-items: center;
+  flex-wrap: wrap; /* permite que bajen en móvil */
+
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap; /* clave para responsive */
+}
+
+/* TEXTO */
+.header__div-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* IMAGEN CONTENEDOR */
+.header__div-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* IMAGEN */
+.header__div-image img {
+  width: 100%;
+  max-width: 350px; /* desktop controlado */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; /* opcional */
+}
+.card {
+  width: 100%;
+}
+
+
+/* =========================
+   📱 RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+  .projects {
+    padding: 20px;
+  }
+
+  .contact h2 {
+    font-size: 30px;
+  }
+
+
+}
+
