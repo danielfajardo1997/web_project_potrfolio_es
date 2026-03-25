@@ -153,23 +153,31 @@ body::before {
    ========================= */
 .card__links {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 25px;
+  left: 15px;
   display: flex;
-  gap: 20px;
-  z-index: 2; /* 🔥 importante */
+  gap: 15px;
+  z-index: 2;
 }
 
+.card__links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+}
+
+.card__overlay {
+  z-index: 1;
+}
 .card__links img {
   width: 30px;
 }
 
-.card__links a {
-  color: #6D6DFF;
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s;
-}
+
 
 /* ✨ SUBRAYADO CON GRADIENTE */
 .card__links a::after {
