@@ -6,10 +6,34 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif; /* 🔥 texto general */
   background-color: #0d0d0d;
   color: white;
   overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 100px);
+}
+
+/* Open Sans */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./fonts/OpenSans-Regular.woff2') format('woff2'),
+       url('./fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Archivo Black */
+@font-face {
+  font-family: 'Archivo Black';
+  src: url('./fonts/ArchivoBlack-Regular.woff2') format('woff2'),
+       url('./fonts/ArchivoBlack-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* =========================
@@ -36,6 +60,7 @@ body::before {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   padding: 60px;
+    gap: clamp(40px, 6vw, 100px);
 }
 
 /* =========================
@@ -50,6 +75,19 @@ body::before {
 
 .card:hover {
   transform: translateY(-10px);
+}
+
+.card__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* =========================
@@ -114,8 +152,16 @@ body::before {
    🔗 LINKS
    ========================= */
 .card__links {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  z-index: 2; /* 🔥 importante */
+}
+
+.card__links img {
+  width: 30px;
 }
 
 .card__links a {
@@ -184,6 +230,13 @@ body::before {
   opacity: 1;
 }
 
+.tools{
+
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 100px);
+}
+
 .tools__icons{
 
   display: flex;
@@ -194,9 +247,11 @@ body::before {
 }
 
 .projects__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 24px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  padding: 40px;
+
 }
 
 /* CONTENEDOR PRINCIPAL */
@@ -207,6 +262,7 @@ body::before {
   gap: 40px;
   padding: 40px;
   flex-wrap: wrap; /* clave para responsive */
+  gap: clamp(5px, 2vh, 25px)
 }
 
 /* TEXTO */
@@ -234,19 +290,156 @@ body::before {
   width: 100%;
 }
 
+.footer {
+  display: flex;              /* 🔥 FALTABA ESTO */
+  flex-direction: column;     /* elementos en vertical */
+  align-items: center;        /* centra horizontal */
+  justify-content: center;    /* centra vertical */
+  gap: 20px;                  /* espacio entre elementos */
+  padding: 60px 20px;
+  text-align: center;         /* centra textos */
+}
+
+.social-media {
+  display: flex;
+  justify-content: center; /* centra los iconos */
+  gap: 40px;               /* separación entre iconos */
+}
+
+/* CONTENEDOR */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  position: relative;
+}
+
+/* 🔥 LINEA GRADIENTE DEBAJO (como tu imagen) */
+.menu::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #7B2FF7, #00C6FF);
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+/* BOTÓN PRINCIPAL */
+.menu__button {
+  position: relative;
+  padding: 12px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(90deg, #7B2FF7, #00C6FF);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* ✨ EFECTO GLOW ANIMADO */
+.menu__button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, #7B2FF7, #00C6FF, #7B2FF7);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+/* HOVER botón */
+.menu__button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.6);
+}
+
+/* activa glow */
+.menu__button:hover::before {
+  opacity: 1;
+}
+
+/* LINKS NORMALES */
+.menu__link,
+.menu__nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* ✨ subrayado animado */
+.menu__link::after,
+.menu__nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #7B2FF7, #00C6FF);
+  transition: width 0.3s ease;
+}
+
+/* HOVER links */
+.menu__link:hover,
+.menu__nav-link:hover {
+  color: #fff;
+}
+
+/* activa línea */
+.menu__link:hover::after,
+.menu__nav-link:hover::after {
+  width: 100%;
+}
+
+.sub-title {
+  font-size: 14px; /* Letra más pequeña */
+  color: #6c757d; /* Gris */
+}
+
+.title {
+  font-size: 100px; /* Letra grande */
+  font-weight: bold; /* Negrita */
+}
+
+
 
 /* =========================
    📱 RESPONSIVE
    ========================= */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
+
+  .projects {
+    padding: 40px;
+  }
+
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr); /* siguen 2 pero más ajustadas */
+    gap: 20px;
+  }
+
+}
+
+@media (max-width: 767px) {
+
   .projects {
     padding: 20px;
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr; /* 🔥 UNA columna */
   }
 
   .contact h2 {
     font-size: 30px;
   }
 
-
 }
-
